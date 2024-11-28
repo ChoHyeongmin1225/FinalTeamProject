@@ -7,12 +7,11 @@ exports.handler = async function (event) {
 
   try {
     const response = await axios.get(
-      "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON",
+      "https://www.grac.or.kr/WebService/GameSearchSvc.asmx/game",
       {
         params: {
-          authkey: "nxDAZEku4syG7lztPuMf14ZFiZMOClIL",
-          searchdate: "20241125",
-          data: "AP01",
+          display: "10",
+          pageno: "1",
         },
         httpsAgent: agent,
       }

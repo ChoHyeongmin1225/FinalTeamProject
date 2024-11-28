@@ -15,14 +15,7 @@ const ExchangeRate = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          '/api/fetchExchange',
-          {
-            params: {
-              authkey: 'nxDAZEku4syG7lztPuMf14ZFiZMOClIL',
-              searchdate: '20241125',
-              data: 'AP01',
-            },
-          }
+          '/api/fetchExchange'
         );
         setData(response.data);
        

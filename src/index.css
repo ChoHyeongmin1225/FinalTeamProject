@@ -6,8 +6,27 @@ body {
   color: #333;
 }
 
+.container {
+  margin: 0 auto;
+  padding: 0 20px; /* 좌우 여백 추가 */
+  max-width: 1200px; /* 페이지의 최대 폭 설정 */
+}
+
 h1 {
-  color: #444;
+  background-color: #0046d1; /* 파란색 배경 */
+  color: #fff; /* 흰색 글자 */
+  padding: 10px 20px;
+  text-align: center;
+  margin: 0;
+  width: 100%; /* 페이지 전체 폭 채우기 */
+}
+h2 {
+  background-color: #0046d1; /* 파란색 배경 */
+  color: #fff; /* 흰색 글자 */
+  padding: 10px 20px;
+  text-align: center;
+  margin: 0;
+  width: 17%; /* 페이지 전체 폭 채우기 */
 }
 
 a {
@@ -21,15 +40,15 @@ a:hover {
 
 button {
   padding: 10px 20px;
-  border: none;
-  background-color: #007bff;
-  color: #fff;
+  border: 2px solid #0046d1; /* 파란색 테두리 */
+  background-color: #0046d1; /* 파란색 배경 */
+  color: #fff; /* 흰색 글자 */
   cursor: pointer;
   border-radius: 5px;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #0035a5; /* 어두운 파란색 배경 */
 }
 
 input {
@@ -52,9 +71,11 @@ th, td {
   padding: 8px;
 }
 
-tr:nth-child(even){background-color: #f2f2f2}
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
 th {
-  background-color: #04AA6D;
-  color: white;
+  background-color: #0046d1; /* 파란색 헤더 */
+  color: white; /* 흰색 텍스트 */
 }

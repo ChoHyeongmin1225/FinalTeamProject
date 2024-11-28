@@ -13,6 +13,13 @@ const ListPage = () => {
   }, []);
 
   const handleDelete = (id) => {
+
+    const confirmDelete = window.confirm("Do you want to delete this item?");
+  
+    if (!confirmDelete) {
+      return;
+    }
+
     fetch(`https://67288771270bd0b97555f84b.mockapi.io/api/v1/exchange/${id}`, {
       method: "DELETE",
     })
@@ -28,7 +35,10 @@ const ListPage = () => {
       <div className="title">
       <h1>Handong Exchange Association</h1>
       </div>
-      <div className="head"><Link to={'/openapi'} className={'link'}> Go to Entire List Page </Link></div>
+      <div className="head">
+      <Link to="/create" className={'link'}>Add New Exchange</Link>
+        <Link to={'/openapi'} className={'link'}> Go to Entire List Page </Link>
+      </div>
       <table>
         <tr>
             <th>통화코드</th><th>국가/통화명</th><th>Show Detail</th><th>Edit/Delete</th>
@@ -45,7 +55,6 @@ const ListPage = () => {
           </tr>
         ))}
       </table>
-      <Link to="/create">Add New Exchange</Link>
     </div>
   );
 };

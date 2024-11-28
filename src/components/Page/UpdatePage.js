@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import "./UpdatePage.css";
 
 const UpdatePage = () => {
   const { id } = useParams();
@@ -26,6 +27,10 @@ const UpdatePage = () => {
   };
 
   const handleEdit = () => {
+    if(!form.cur_nm || !form.cur_unit || !form.bkpr || !form.deal_bas_r || !form.ttb || !form.tts){
+      alert("Blank input!");
+      return;
+    }
     fetch(`https://67288771270bd0b97555f84b.mockapi.io/api/v1/exchange/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -39,7 +44,7 @@ const UpdatePage = () => {
   };
 
   return (
-    <div>
+    <div className="body">
       <h2>Update Exchange Data</h2>
       <div><input
         type="text"
@@ -84,8 +89,10 @@ const UpdatePage = () => {
         value={form.cur_nm}
         onChange={handleChange}
       /></div>
-      
-      <button onClick={handleEdit}>Edit</button>
+      <div className="button">
+      <button onClick={handleEdit} className="bt1">Edit</button>
+      <button onClick={()=>navigate('/')} className="bt2">Close</button>
+      </div>
     </div>
   );
 };

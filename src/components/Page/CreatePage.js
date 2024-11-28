@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import "./CreatePage.css";
 const CreatePage = () => {
   const [form, setForm] = useState({
     cur_unit: "",
@@ -18,6 +18,10 @@ const CreatePage = () => {
   };
 
   const handleAdd = () => {
+    if(!form.cur_nm || !form.cur_unit || !form.bkpr || !form.deal_bas_r || !form.ttb || !form.tts){
+      alert("Blank input!");
+      return;
+    }
     fetch("https://67288771270bd0b97555f84b.mockapi.io/api/v1/exchange", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -31,30 +35,30 @@ const CreatePage = () => {
   };
 
   return (
-    <div>
+    <div className="body">
       <h2>Create New Exchange</h2>
-      <div><input
+      <div className="child"><input
         type="text"
         name="cur_unit"
         placeholder="Currency Unit"
         value={form.cur_unit}
         onChange={handleChange}
       /></div>
-      <div><input
+      <div className="child"><input
         type="text"
         name="ttb"
         placeholder="송금받을 때 금액"
         value={form.ttb}
         onChange={handleChange}
       /></div>
-      <div><input
+      <div className="child"><input
         type="text"
         name="tts"
         placeholder="송금보낼 때 금액"
         value={form.tts}
         onChange={handleChange}
       /></div>
-      <div><input
+      <div className="child"><input
         type="text"
         name="deal_bas_r"
         placeholder="매매기준율"
@@ -62,14 +66,14 @@ const CreatePage = () => {
         onChange={handleChange}
       /></div>
       
-      <div><input
+      <div className="child"><input
         type="text"
         name="bkpr"
         placeholder="장부 가격"
         value={form.bkpr}
         onChange={handleChange}
       /></div>
-      <div><input
+      <div className="child"><input
         type="text"
         name="cur_nm"
         placeholder="국가명"
@@ -77,7 +81,10 @@ const CreatePage = () => {
         onChange={handleChange}
       /></div>
       
-      <button onClick={handleAdd}>Add</button>
+      <div className="button">
+      <button onClick={handleAdd} className="bt1">Add</button>
+      <button onClick={()=>navigate('/')} className="bt2">Close</button>
+      </div>
     </div>
   );
 };

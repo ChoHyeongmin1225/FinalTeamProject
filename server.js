@@ -5,7 +5,7 @@ const app = express();
 const cors = require('cors');
 app.use(cors());
 
-app.get('/api/exchange-rate', async (req, res) => {
+app.get('/proxy', async (req, res) => {
   try {
     const response = await axios.get(
       'https://www.koreaexim.go.kr/site/program/financial/exchangeJSON', {

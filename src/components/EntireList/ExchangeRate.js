@@ -68,7 +68,6 @@ const ExchangeRate = () => {
             <td>{item.tts}</td>
             <td>{item.deal_bas_r}</td>
             <td>{item.bkpr}</td>
-          
           </tr>
         ))}
         </tbody>

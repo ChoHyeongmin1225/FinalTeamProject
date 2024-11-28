@@ -5,12 +5,11 @@ exports.handler = async function (event) {
   console.log("Incoming request to fetchExchange API");
   try {
     const response = await axios.get(
-      "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON",
+      "https://data.fixer.io/api/latest",
       {
         params: {
-          authkey: "nxDAZEku4syG7lztPuMf14ZFiZMOClIL",
-          searchdate: "20241125",
-          data: "AP01",
+          access_key: "c87f9b42d53af234c68e4c8971bae2b0",
+          format: "1",
         },
       }
     );

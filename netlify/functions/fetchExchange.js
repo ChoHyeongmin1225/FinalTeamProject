@@ -18,7 +18,8 @@ exports.handler = async function (event) {
           searchdate: "20241125",
           data: "AP01",
         },
-        httpsAgent: agent // Attach the agent to the axios request
+        httpsAgent: agent,
+        maxRedirects: 0,
       }
     );
     console.log("Response from OpenAPI:", response.data); // 성공 로그

@@ -11,18 +11,15 @@ const ExchangeRate = () => {
     setSearchTerm(e.target.value);
   };
 
+  
+  
+
   useEffect(() => {
+
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          '/api/site/program/financial/exchangeJSON',
-          {
-            params: {
-              authkey: 'nxDAZEku4syG7lztPuMf14ZFiZMOClIL',
-              searchdate: '20241125',
-              data: 'AP01',
-            },
-          }
+          '/api/fetchExchange'
         );
         setData(response.data);
        

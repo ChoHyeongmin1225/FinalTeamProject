@@ -1,6 +1,6 @@
 const axios = require("axios");
 
-exports.handler = async function (event) {
+exports.handler = async function () {
   try {
     const response = await axios.get(
       "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON",
@@ -12,14 +12,16 @@ exports.handler = async function (event) {
         },
       }
     );
+
     return {
       statusCode: 200,
       body: JSON.stringify(response.data),
     };
   } catch (error) {
+    console.error("Error fetching OpenAPI data:", error.message);
     return {
       statusCode: error.response?.status || 500,
-      body: JSON.stringify({ error: error.message }),
+      body: JSON.stringify({ error: "Failed to fetch OpenAPI data" }),
     };
   }
 };

@@ -1,5 +1,38 @@
 .head{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title{
+   justify-items: center;
+}
+
+.link{
+    text-decoration: none; 
+    color: inherit;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 1px solid #04AA6D;
+    border-radius: 5px;
+    background-color: #f8f9fa; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link:hover {
+    background-color:#04AA6D;
+    color: white; 
+  }
+
+.search{
+ text-decoration: none;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.search:focus{
+   
+   outline-color:#04AA6D;
 }

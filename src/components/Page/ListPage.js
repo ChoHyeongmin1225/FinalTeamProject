@@ -27,7 +27,7 @@ const ListPage = () => {
     <div>
       <div className="head">
       <h1>Handong Exchange Association</h1>
-      <Link to={'/openapi'}> Go to Entire List Page </Link>
+      <Link to={'/openapi'} className={'link'}> Go to Entire List Page </Link>
       </div>
       <table>
         <tr>

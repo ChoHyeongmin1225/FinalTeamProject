@@ -43,15 +43,15 @@ const ExchangeRate = () => {
 
   return (
     <div>
+       <div className='title'><h1>Handong Exchange Association OpenAPI List Page</h1></div>
       <div className='head'>
-        <h1>Handong Exchange Association OpenAPI List Page</h1>
-        <Link to={'/'}> Go to Home Page </Link>
-        <input
+      <input
           className="search"
           placeholder="Search"
           onChange={onChange}
           value={searchTerm}
         />
+        <div><Link to={'/'} className={'link'}> Go to Home Page </Link></div>
       </div>
 
       <table>

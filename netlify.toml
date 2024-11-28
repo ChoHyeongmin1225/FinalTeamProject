@@ -3,6 +3,6 @@
 
 [[redirects]]
   from = "/api/fetchExchange"
-  to = "/.netlify/functions/:splat"
+  to = "/.netlify/functions/fetchExchange"
   status = 200
 

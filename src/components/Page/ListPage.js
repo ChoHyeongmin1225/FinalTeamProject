@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import "./ListPage.css"
 
 const ListPage = () => {
   const [data, setData] = useState([]);
@@ -24,7 +25,10 @@ const ListPage = () => {
 
   return (
     <div>
+      <div className="head">
       <h1>Handong Exchange Association</h1>
+      <Link to={'/openapi'}>Go to Entire List Page</Link>
+      </div>
       <table>
         <tr>
             <th>통화코드</th><th>국가/통화명</th><th>Show Detail</th><th>Edit/Delete</th>

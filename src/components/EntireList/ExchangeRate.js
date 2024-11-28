@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from "react-router-dom";
 import axios from 'axios';
 import './ExchangeRate.css'
 
@@ -44,6 +45,7 @@ const ExchangeRate = () => {
     <div>
       <div className='head'>
         <h1>Handong Exchange Association OpenAPI List Page</h1>
+        <Link to={'/'}>Go to Home Page</Link>
         <input
           className="search"
           placeholder="Search"

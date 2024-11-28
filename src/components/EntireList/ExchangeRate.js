@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { parseStringPromise } from 'xml2js'; // XML 파싱 라이브러리
+import { XMLParser } from 'fast-xml-parser'; // fast-xml-parser import
 import './ExchangeRate.css';
 import { Link } from 'react-router-dom';
 
@@ -16,13 +16,13 @@ const ExchangeRate = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('/api/fetchExchange'); // 백엔드 API 호출
-        // XML을 JSON으로 변환
-        const parsedData = await parseStringPromise(response.data, {
-          explicitArray: false, // 단일 항목은 배열로 처리하지 않음
-          trim: true,           // 공백 제거
+        const parser = new XMLParser({
+          ignoreAttributes: false, // XML 속성 무시하지 않음
+          trimValues: true,        // 값의 앞뒤 공백 제거
         });
+        const parsedData = parser.parse(response.data);
         // JSON에서 필요한 데이터 추출
-        const items = parsedData.result.item || []; // 'item' 필드가 배열로 저장됨
+        const items = parsedData.result?.item || []; // 'item' 필드가 배열로 저장됨
         setData(items);
       } catch (error) {
         console.error('Error fetching or parsing data:', error);

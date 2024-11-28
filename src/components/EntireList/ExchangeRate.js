@@ -22,8 +22,7 @@ const ExchangeRate = () => {
           '/api/fetchExchange'
         );
         setData(response.data);
-        console.log("Requesting:", response.config.url);
-
+       
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -68,6 +67,7 @@ const ExchangeRate = () => {
             <td>{item.tts}</td>
             <td>{item.deal_bas_r}</td>
             <td>{item.bkpr}</td>
+          
           </tr>
         ))}
         </tbody>

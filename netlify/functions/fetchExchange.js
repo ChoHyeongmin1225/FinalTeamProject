@@ -1,16 +1,25 @@
 const axios = require("axios");
-
+const https = require("https");
 
 exports.handler = async function (event) {
   console.log("Incoming request to fetchExchange API");
+
+  // Create an https agent that ignores SSL certificate verification
+  const agent = new https.Agent({  
+    rejectUnauthorized: false // Bypass SSL verification (not recommended for production)
+  });
+
   try {
     const response = await axios.get(
-      "https://data.fixer.io/api/latest",
+      "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON",
       {
         params: {
-          access_key: "c87f9b42d53af234c68e4c8971bae2b0",
-          format: "1",
+          authkey: "nxDAZEku4syG7lztPuMf14ZFiZMOClIL",
+          searchdate: "20241125",
+          data: "AP01",
         },
+        httpsAgent: agent,
+        maxRedirects: 1,
       }
     );
     console.log("Response from OpenAPI:", response.data); // 성공 로그

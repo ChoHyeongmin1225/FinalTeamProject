@@ -22,7 +22,8 @@ const ExchangeRate = () => {
           '/api/fetchExchange'
         );
         setData(response.data);
-       
+        console.log("Requesting:", response.config.url);
+
       } catch (error) {
         console.error('Error fetching data:', error);
       }

@@ -13,7 +13,7 @@ app.get('/api/exchange-rate', async (req, res) => {
         },
       }
     );
-    res.json(response.data); // 데이터를 클라이언트로 전달
+    res.json(response.data); 
   } catch (error) {
     console.error('Error fetching data from API:', error.message);
     res.status(500).json({ error: 'Failed to fetch data from OpenAPI' });

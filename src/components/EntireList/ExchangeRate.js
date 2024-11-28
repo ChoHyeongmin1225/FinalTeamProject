@@ -15,7 +15,7 @@ const ExchangeRate = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          '/api/site/program/financial/exchangeJSON',
+          '/api/fetchExchange',
           {
             params: {
               authkey: 'nxDAZEku4syG7lztPuMf14ZFiZMOClIL',

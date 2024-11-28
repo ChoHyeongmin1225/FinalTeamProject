@@ -19,7 +19,7 @@ exports.handler = async function (event) {
           data: "AP01",
         },
         httpsAgent: agent,
-        maxRedirects: 2,
+        maxRedirects: 1,
       }
     );
     console.log("Response from OpenAPI:", response.data); // 성공 로그

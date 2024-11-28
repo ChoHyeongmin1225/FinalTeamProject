@@ -1,4 +1,9 @@
 const axios = require("axios");
+const https = require('https');
+
+const agent = new https.Agent({  
+  rejectUnauthorized: false,  // 인증서 검증 비활성화
+});
 
 exports.handler = async function (event) {
   console.log("Incoming request to fetchExchange API");
@@ -11,6 +16,7 @@ exports.handler = async function (event) {
           searchdate: "20241125",
           data: "AP01",
         },
+        httpsAgent: agent,
       }
     );
     console.log("Response from OpenAPI:", response.data); // 성공 로그

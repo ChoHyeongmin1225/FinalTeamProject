@@ -1,30 +1,25 @@
-const express = require('express');
-const axios = require('axios');
-const app = express();
+const axios = require("axios");
 
-let cachedData = null; 
-let lastFetchTime = null;
-
-const fetchExchangeRate = async () => {
+exports.handler = async function (event) {
   try {
     const response = await axios.get(
-      'https://www.koreaexim.go.kr/site/program/financial/exchangeJSON', {
+      "https://www.koreaexim.go.kr/site/program/financial/exchangeJSON",
+      {
         params: {
-          authkey: 'nxDAZEku4syG7lztPuMf14ZFiZMOClIL',
-          searchdate: '20241125',
-          data: 'AP01',
+          authkey: "nxDAZEku4syG7lztPuMf14ZFiZMOClIL",
+          searchdate: "20241125",
+          data: "AP01",
         },
       }
     );
-    return response.data;
+    return {
+      statusCode: 200,
+      body: JSON.stringify(response.data),
+    };
   } catch (error) {
-    console.error('Error fetching data from OpenAPI:', error.message);
-    throw new Error('Failed to fetch data from OpenAPI');
+    return {
+      statusCode: error.response?.status || 500,
+      body: JSON.stringify({ error: error.message }),
+    };
   }
 };
-
-
-
-app.listen(3001, () => {
-  console.log('Server running on http://localhost:3001');
-});

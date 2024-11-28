@@ -32,49 +32,51 @@ const CreatePage = () => {
 
   return (
     <div>
-      <h1>Create New Exchange</h1>
-      <input
+      <h2>Create New Exchange</h2>
+      <div><input
         type="text"
         name="cur_unit"
         placeholder="Currency Unit"
         value={form.cur_unit}
         onChange={handleChange}
-      />
-      <input
+      /></div>
+      <div><input
         type="text"
         name="ttb"
         placeholder="송금받을 때 금액"
         value={form.ttb}
         onChange={handleChange}
-      />
-      <input
+      /></div>
+      <div><input
         type="text"
         name="tts"
         placeholder="송금보낼 때 금액"
         value={form.tts}
         onChange={handleChange}
-      />
-      <input
+      /></div>
+      <div><input
         type="text"
         name="deal_bas_r"
         placeholder="매매기준율"
         value={form.deal_bas_r}
         onChange={handleChange}
-      />
-      <input
+      /></div>
+      
+      <div><input
         type="text"
         name="bkpr"
         placeholder="장부 가격"
         value={form.bkpr}
         onChange={handleChange}
-      />
-      <input
+      /></div>
+      <div><input
         type="text"
         name="cur_nm"
         placeholder="국가명"
         value={form.cur_nm}
         onChange={handleChange}
-      />
+      /></div>
+      
       <button onClick={handleAdd}>Add</button>
     </div>
   );

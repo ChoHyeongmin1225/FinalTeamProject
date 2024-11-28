@@ -5,5 +5,5 @@ functions = "netlify/functions"
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/:splat"
+  to = "/.netlify/functions/fetchExchange"
   status = 200

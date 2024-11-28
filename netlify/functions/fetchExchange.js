@@ -1,13 +1,9 @@
 const axios = require("axios");
-const https = require("https");
 
 exports.handler = async function (event) {
   console.log("Incoming request to fetchExchange API");
 
-  // Create an https agent that ignores SSL certificate verification
-  const agent = new https.Agent({  
-    rejectUnauthorized: false // Bypass SSL verification (not recommended for production)
-  });
+  
 
   try {
     const response = await axios.get(
@@ -19,7 +15,6 @@ exports.handler = async function (event) {
           data: "AP01",
         },
         httpsAgent: agent,
-        maxRedirects: 1,
       }
     );
     console.log("Response from OpenAPI:", response.data); // 성공 로그

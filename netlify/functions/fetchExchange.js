@@ -1,6 +1,6 @@
-import fetch from 'node-fetch';  // Use import for ES modules
+const fetch = require('node-fetch');  // Use require() with version 2.x
 
-export async function handler(event) {
+exports.handler = async function (event) {
   console.log("Incoming request to fetchExchange API");
 
   try {

@@ -1,8 +1,0 @@
-[build]
-  functions = "netlify/functions"
-
-[[redirects]]
-  from = "/api/fetchExchange"
-  to = "/.netlify/functions/fetchExchange"
-  status = 200
-

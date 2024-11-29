@@ -22,6 +22,7 @@ const DetailPage = () => {
     <h1>Detail Page</h1>
       <p>Game Title: {data.gametitle}</p>
       <p>Production Company: {data.entname}</p>
+      <p>Rated Date: {data.rateddate}</p>
       <p>Given Rate: {data.givenrate}</p>
       <p>Genre: {data.genre}</p>
       <p>Platform: {data.platform}</p>

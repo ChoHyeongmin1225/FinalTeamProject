@@ -8,6 +8,7 @@ const UpdatePage = () => {
   const [form, setForm] = useState({
     gametitle: "",
     entname: "",
+    rateddate: "",
     givenrate: "",
     platform: "",
     genre: "",
@@ -27,7 +28,7 @@ const UpdatePage = () => {
   };
 
   const handleEdit = () => {
-    if(!form.gametitle || !form.entname || !form.givenrate || !form.genre || !form.summary || !form.platform){
+    if(!form.gametitle || !form.entname ||!form.rateddate || !form.givenrate || !form.genre || !form.summary || !form.platform){
       alert("Blank input!");
       return;
     }
@@ -62,6 +63,13 @@ const UpdatePage = () => {
         name="entname"
         placeholder="Production Company"
         value={form.entname}
+        onChange={handleChange}
+      /></div>
+      <div className="child"><input
+        type="text"
+        name="rateddate"
+        placeholder="Rated Date"
+        value={form.rateddate}
         onChange={handleChange}
       /></div>
       <div className="child"><input

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { XMLParser } from 'fast-xml-parser'; // fast-xml-parser import
-import './ExchangeRate.css';
+import './Game.css';
 import { Link } from 'react-router-dom';
 
-const ExchangeRate = () => {
+const Game = () => {
   const [data, setData] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -48,7 +48,7 @@ const ExchangeRate = () => {
 
     return (
       <div>
-        <div className="title"><h1>Handong Exchange Association OpenAPI List Page</h1></div>
+        <div className="title"><h1>Game OpenAPI List Page</h1></div>
         <div className="head">
           <input
             className="search"
@@ -89,4 +89,4 @@ const ExchangeRate = () => {
     
 };
 
-export default ExchangeRate;
+export default Game;

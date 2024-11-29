@@ -36,7 +36,7 @@ const ListPage = () => {
       <h1>Game List</h1>
       </div>
       <div className="head">
-      <Link to="/create" className={'link'}>Add New Exchange</Link>
+      <Link to="/create" className={'link'}>Add New Game</Link>
         <Link to={'/openapi'} className={'link'}> Go to Entire List Page </Link>
       </div>
       <table>

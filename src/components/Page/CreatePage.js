@@ -37,7 +37,7 @@ const CreatePage = () => {
 
   return (
     <div className="body">
-      <h2>Create New Exchange</h2>
+      <h2>Create New Game</h2>
       <div className="child"><input
         type="text"
         name="gametitle"

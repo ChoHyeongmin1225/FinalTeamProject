@@ -62,7 +62,7 @@ const Game = () => {
         <table>
           <thead>
             <tr>
-              <th>게임 제목</th><th>제작사</th><th>등급</th><th>장르</th><th>플랫폼</th><th>요약</th>
+              <th>Game Title</th><th>Production Company</th><th>Rated Date</th><th>Given Rate</th><th>Genre</th><th>Platform</th><th>Summary</th>
             </tr>
           </thead>
           <tbody>
@@ -71,6 +71,7 @@ const Game = () => {
                 <tr key={index}>
                   <td>{item.gametitle}</td>
                   <td>{item.entname}</td>
+                  <td>{item.rateddate}</td>
                   <td>{item.givenrate}</td>
                   <td>{item.genre}</td>
                   <td>{item.platform}</td>

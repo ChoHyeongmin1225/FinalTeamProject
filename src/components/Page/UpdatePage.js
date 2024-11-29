@@ -44,7 +44,11 @@ const UpdatePage = () => {
   };
 
   return (
-    <div className="body">
+    <>
+    
+     <div className="body">
+   
+      <div className="editform">
       <h2>Update Exchange Data</h2>
       <div className="child"><input
         type="text"
@@ -93,7 +97,11 @@ const UpdatePage = () => {
       <button onClick={handleEdit} className="bt1">Edit</button>
       <button onClick={()=>navigate('/')} className="bt2">Close</button>
       </div>
+      </div>
+      
     </div>
+    </>
+    
   );
 };
 

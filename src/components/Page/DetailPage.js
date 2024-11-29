@@ -20,12 +20,12 @@ const DetailPage = () => {
     <>
     <div className="body">
     <h1>Detail Page</h1>
-      <p>Currency Unit: {data.cur_unit}</p>
-      <p>송금받을 때 금액: {data.ttb}</p>
-      <p>송금보낼 때 금액: {data.tts}</p>
-      <p>매매기준율: {data.deal_bas_r}</p>
-      <p>장부 가격: {data.bkpr}</p>
-      <p>국가명: {data.cur_nm}</p>
+      <p>Game Title: {data.gametitle}</p>
+      <p>Production Company: {data.entname}</p>
+      <p>Given Rate: {data.givenrate}</p>
+      <p>Genre: {data.genre}</p>
+      <p>Platform: {data.platform}</p>
+      <p>Summary: {data.summary}</p>
       <button onClick={() => navigate("/")}>Back to ListPage</button>
     </div>
     </>

@@ -6,12 +6,12 @@ const UpdatePage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    cur_unit: "",
-    ttb: "",
-    tts: "",
-    deal_bas_r: "",
-    bkpr: "",
-    cur_nm: "",
+    gametitle: "",
+    entname: "",
+    givenrate: "",
+    platform: "",
+    genre: "",
+    summary: "",
   });
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const UpdatePage = () => {
   };
 
   const handleEdit = () => {
-    if(!form.cur_nm || !form.cur_unit || !form.bkpr || !form.deal_bas_r || !form.ttb || !form.tts){
+    if(!form.gametitle || !form.entname || !form.givenrate || !form.genre || !form.summary || !form.platform){
       alert("Blank input!");
       return;
     }
@@ -38,7 +38,7 @@ const UpdatePage = () => {
     })
       .then(() => {
         alert("Data updated successfully!");
-        navigate("/"); // ListPage로 이동
+        navigate("/"); 
       })
       .catch((error) => console.error("Error updating data:", error));
   };
@@ -46,47 +46,47 @@ const UpdatePage = () => {
   return (
     <div className="body">
       <h2>Update Exchange Data</h2>
-      <div><input
+      <div className="child"><input
         type="text"
-        name="cur_unit"
-        placeholder="Currency Unit"
-        value={form.cur_unit}
+        name="gametitle"
+        placeholder="Game Title"
+        value={form.gametitle}
         onChange={handleChange}
       /></div>
-      <div><input
+      <div className="child"><input
         type="text"
-        name="ttb"
-        placeholder="송금받을 때 금액"
-        value={form.ttb}
+        name="entname"
+        placeholder="Production Company"
+        value={form.entname}
         onChange={handleChange}
       /></div>
-      <div><input
+      <div className="child"><input
         type="text"
-        name="tts"
-        placeholder="송금보낼 때 금액"
-        value={form.tts}
+        name="givenrate"
+        placeholder="Given Rate"
+        value={form.givenrate}
         onChange={handleChange}
       /></div>
-      <div><input
+      <div className="child"><input
         type="text"
-        name="deal_bas_r"
-        placeholder="매매기준율"
-        value={form.deal_bas_r}
+        name="genre"
+        placeholder="Genre"
+        value={form.genre}
         onChange={handleChange}
       /></div>
       
-      <div><input
+      <div className="child"><input
         type="text"
-        name="bkpr"
-        placeholder="장부 가격"
-        value={form.bkpr}
+        name="platform"
+        placeholder="Platform"
+        value={form.platform}
         onChange={handleChange}
       /></div>
-      <div><input
+      <div className="child"><input
         type="text"
-        name="cur_nm"
-        placeholder="국가명"
-        value={form.cur_nm}
+        name="summary"
+        placeholder="Summary"
+        value={form.summary}
         onChange={handleChange}
       /></div>
       <div className="button">

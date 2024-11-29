@@ -33,7 +33,7 @@ const ListPage = () => {
   return (
     <div>
       <div className="title">
-      <h1>Handong Exchange Association</h1>
+      <h1>Game List</h1>
       </div>
       <div className="head">
       <Link to="/create" className={'link'}>Add New Exchange</Link>
@@ -41,12 +41,12 @@ const ListPage = () => {
       </div>
       <table>
         <tr>
-            <th>통화코드</th><th>국가/통화명</th><th>Show Detail</th><th>Edit/Delete</th>
+            <th>Gama Title</th><th>Production Company</th><th>Show Detail</th><th>Edit/Delete</th>
         </tr>
         {data.map((item) => (
           <tr key={item.id}>
-            <td>{item.cur_unit}</td>
-            <td>{item.cur_nm}</td>
+            <td>{item.gametitle}</td>
+            <td>{item.entname}</td>
             <td><Link to={`/detail/${item.id}`}> Details </Link></td>
             <td>
                 <Link to={`/update/${item.id}`}> Edit </Link>

@@ -41,7 +41,7 @@ const ListPage = () => {
       </div>
       <table>
         <tr>
-            <th>Gama Title</th><th>Production Company</th><th>Show Detail</th><th>Edit/Delete</th>
+            <th>Game Title</th><th>Production Company</th><th>Show Detail</th><th>Edit/Delete</th>
         </tr>
         {data.map((item) => (
           <tr key={item.id}>
